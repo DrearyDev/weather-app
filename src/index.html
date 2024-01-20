@@ -8,6 +8,26 @@
 <body>
 
     <div class="content"></div>
+
+    <dialog open>
+        <h1>Weather Info</h1>
+        <form action="">
+            <ul>
+                <li>
+                    <label for="options">Location Method:</label>
+                    <select name="options" id="options">
+                        <option value="country">Country</option>
+                        <option value="us-zip">US zip</option>
+                        <option value="uk-postcode">UK postcode</option>
+                        <option value="ca-postal">Canadian postal Code</option>
+                    </select>
+                </li>
+                <li>
+                    <input type="text" name="country" id="country">
+                </li>
+            </ul>
+        </form>
+    </dialog>
     
 </body>
 </html>
