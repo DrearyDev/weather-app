@@ -9,7 +9,7 @@ const currentDate = function getCurrentDate() {
     const year = date.getFullYear();
     const month = date.getMonth();
     const day = date.getDate();
-
+    
     return { year, month, day };
 };
 
@@ -24,6 +24,7 @@ const pastDates = function getPastTwoDates() {
 
         let year = cdate.year;
         let month = cdate.month;
+        month++
         let day = cdate.day - (2 - i);
 
         // this means that we went back a month
@@ -36,12 +37,48 @@ const pastDates = function getPastTwoDates() {
             };
         };
 
+        if (month < 10) { month = '0' + month };
+        if (day < 10) { day = '0' + day };
+
         pdates[i] = {year, month, day};
     };
     return pdates;
 };
 
 
+const futureDates = function getFutureTwoDates() {
+    let date = new Date();
+    let nextMonthDays = daysInMonth(date.getMonth() +1, date.getFullYear());
+    let cdate = currentDate();
+    let fdates = [];
+
+    for (let i = 0; i < 2; i++) {
+        let year = cdate.year;
+        let month = cdate.month;
+        month++;
+        let day = cdate.day + (1 + i);
+
+        
+        // this means that we went forward one month
+        if (day === 1) {
+            month++;
+
+            if (month === 13) {//this means it went to new year
+                month = 1;
+                year++;
+            };
+        };
 
 
-export { currentDate, pastDates };
+        if (month < 10) { month = '0' + month };
+        if (day < 10) { day = '0' + day };
+
+        fdates[i] = {year, month, day};
+    };
+    return fdates;
+};
+
+
+
+
+export { currentDate, pastDates, futureDates };
