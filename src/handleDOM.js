@@ -6,7 +6,8 @@ two past days along with the current day and two future days.
 ----------------------------------------------------------------------------------------------*/
 
 function defaultView() {
-    console.log(defaultData());
+    let data = defaultData();
+    console.log(data);
 };
 
 export { defaultView };

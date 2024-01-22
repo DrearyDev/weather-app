@@ -44,6 +44,7 @@ body {
     height: 40px;
     width: 40px;
     background-color: var(--FG-COLOR);
+    border: none;
 }
 .header .open-dialog:hover {
     filter: brightness(115%);

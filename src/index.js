@@ -8,7 +8,7 @@ import { currentDate, pastDates, futureDates } from './handleDates.js';
 import { defaultView } from './handleDOM.js';
 
 
-const btn = document.querySelector('button');
+const btn = document.querySelector('button.test');
 btn.addEventListener('click', defaultView);
 
 const dialog = document.querySelector('dialog');
