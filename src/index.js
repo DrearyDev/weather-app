@@ -9,7 +9,9 @@ import { defaultView } from './handleDOM.js';
 
 
 const btn = document.querySelector('button.test');
-btn.addEventListener('click', defaultView);
+btn.addEventListener('click', () => {
+    defaultView();
+});
 
 const dialog = document.querySelector('dialog');
 const dialogBtn = document.querySelector('.open-dialog');
