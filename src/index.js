@@ -7,9 +7,10 @@ import './style.css';
 import { currentDate, pastDates, futureDates } from './handleDates.js';
 import { defaultView } from './handleDOM.js';
 
+defaultView();
 
-const btn = document.querySelector('button.test');
-btn.addEventListener('click', () => {
+
+window.addEventListener('click', () => {//for testing
     defaultView();
 });
 

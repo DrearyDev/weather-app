@@ -14,8 +14,10 @@ async function fetchData(query) {
         let condition = object.day.condition.text;
         let avgTempCelsius = object.day.avgtemp_c;
         let maxTempCelsius = object.day.maxtemp_c;
+        let minTempCelsius = object.day.mintemp_c;
         let avgTempFarenheit = object.day.avgtemp_f;
         let maxTempFarenheit = object.day.maxtemp_f;
+        let minTempFarenheit = object.day.mintemp_f;
         let chanceOfRain = object.day.daily_chance_of_rain;
         let chanceOfSnow = object.day.daily_chance_of_snow;
 
@@ -27,8 +29,10 @@ async function fetchData(query) {
             condition,
             avgTempCelsius,
             maxTempCelsius,
+            minTempCelsius,
             avgTempFarenheit,
             maxTempFarenheit,
+            minTempFarenheit,
             chanceOfRain,
             chanceOfSnow
         });

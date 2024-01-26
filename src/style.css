@@ -13,18 +13,22 @@
 
 body {
     min-height: 100vh;
+    padding: 10px;
 
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
 
     color: var(--FG-COLOR);
     background-color: var(--BG-COLOR);
 }
 
 .header {
+    height: 90px;
     width: 100%;
     padding: 20px;
+    margin-bottom: 20px;
 
     display: flex;
     align-items: center;
@@ -49,6 +53,77 @@ body {
 .header .open-dialog:hover {
     filter: brightness(115%);
 }
+
+.container {
+    min-height: 100vh;
+    width: 100%;
+
+    margin-top: 90px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.container img {
+    height: auto;
+    width: 64px;
+}
+.container .top {
+    padding: 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 20px;
+
+    /* border: 1px solid var(--FG-COLOR); */
+    border-radius: 10px;
+}
+.card-container {
+    flex-wrap: wrap;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.card-container .card {
+    height: auto;
+    width: 230px;
+    padding: 10px;
+
+    flex-wrap: wrap;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+
+    border: 1px solid var(--FG-COLOR);
+    border-radius: 10px;
+}
+.card-container .card > div {
+    padding: 20px;
+}
+.card-container .card div > h1,
+.card-container .card div > p {
+    white-space: nowrap;
+    font-weight: bolder;
+}
+.card-container .card.today {
+    border: 3px solid var(--FG-COLOR);
+}
+.card-container .card .main-data {
+    height: 100%;
+}
+.card-container .card .temp-data {
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
 
 dialog {
     height: 500px;
@@ -92,4 +167,17 @@ form input,
 form select {
     width: 100%;
     padding: 5px;
+}
+
+@media only screen and (max-width: 644px) {
+    .container .card {
+        height: auto;
+
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+    .container .card > div {
+        width: 100%;
+    }
 }
