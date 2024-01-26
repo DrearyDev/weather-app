@@ -72,7 +72,8 @@ async function defaultView() {
             day.innerText = `${getMonth(datearr[1])} ${datearr[2]} ${datearr[0]}`;
     
             let icon = document.createElement('img');
-            icon.src = 'https:' + data[i].icon
+            icon.src = 'https:' + data[i].icon;
+            icon.setAttribute('draggable', 'false');
     
             let condition = document.createElement('p');
             condition.innerText = data[i].condition;
@@ -118,7 +119,7 @@ async function defaultView() {
             let datearr = data[i].day.split('-');
             date.innerText = `${getMonth(datearr[1])} ${datearr[2]} ${datearr[0]}`;
 
-            icon.src = data[i].icon;
+            icon.src = 'https:' + data[i].icon;
 
             condition.innerText = data[i].condition;
 

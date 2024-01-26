@@ -44,15 +44,72 @@ body {
     user-select: none;
     color: var(--FG-COLOR);
 }
-.header .open-dialog {
+.header .buttons-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+.header .buttons-container .open-dialog {
     height: 40px;
     width: 40px;
     background-color: var(--FG-COLOR);
     border: none;
+    border-radius: 10px;
 }
-.header .open-dialog:hover {
+.header .buttons-container .open-dialog:hover {
     filter: brightness(115%);
 }
+.header .buttons-container .switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+.header .buttons-container .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.header .buttons-container .switch .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--BG-COLOR);
+    transition: 0.4s;
+    box-shadow: 0 0 1px white;
+    border-radius: 10px;
+}
+.header .buttons-container .switch .slider::before {
+    position: absolute;
+    /* change content depending on if degrees in celsius of farenheit */
+    content: "";
+    font-size: .8rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    color: var(--BG-COLOR);
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 10px;
+}
+.header .buttons-container .switch input:checked + .slider {
+    background-color: var(--FG-COLOR);
+}
+.header .buttons-container .switch input:checked + .slider::before {
+    transform: translateX(26px);
+}
+
+
 
 .container {
     min-height: 100vh;
@@ -133,6 +190,7 @@ dialog {
 
     color: var(--FG-COLOR);
     background-color: var(--BG-COLOR);
+    border-radius: 10px;
 }
 dialog::backdrop {
     background-color: rgba(0, 0, 0, 0.5);
