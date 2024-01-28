@@ -79,9 +79,12 @@ function getMonth(num) {
     return months[number];
 };
 
-async function defaultView() {
-    data = await Promise.resolve(fetchData('auto:ip'))
-    console.log(data);
+
+async function renderWeather(query) {
+    mainContainer.innerHTML = '';
+    cardContainer.innerHTML = '';
+
+    data = await Promise.resolve(fetchData(query));
 
     for (let i in data) {
         if (Number(i) !== 2) {
@@ -205,4 +208,4 @@ async function defaultView() {
     };
 };
 
-export { defaultView, changeDegrees };
+export { renderWeather, changeDegrees };

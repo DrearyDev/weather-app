@@ -219,7 +219,13 @@ dialog h1 {
     align-items: center;
     justify-content: center;
 }
-
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
 form ul {
     list-style: none;
     display: flex;
@@ -243,6 +249,16 @@ form input,
 form select {
     width: 100%;
     padding: 5px;
+}
+input:invalid {
+    border: 2px solid lightcoral;
+}
+form .err {
+    color: lightcoral;
+}
+form button {
+    width: 100%;
+    padding: 5px 10px;
 }
 
 @media only screen and (max-width: 644px) {
