@@ -191,11 +191,24 @@ dialog {
     height: 500px;
 
     margin: auto;
-    padding: 20px;
+    padding: 35px 20px 20px 20px;
 
     color: var(--FG-COLOR);
     background-color: var(--BG-COLOR);
     border-radius: 10px;
+}
+dialog .exit-btn {
+    height: 20px;
+    width: 20px;
+    cursor: pointer;
+
+    position: absolute;
+    top: 10px;
+    right: 10px;
+
+    background-color: var(--FG-COLOR);
+    border: none;
+    border-radius: 5px;
 }
 dialog::backdrop {
     background-color: rgba(0, 0, 0, 0.5);

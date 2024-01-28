@@ -7,6 +7,7 @@ import './style.css';
 import { currentDate, pastDates, futureDates } from './handleDates.js';
 import { defaultView, changeDegrees } from './handleDOM.js';
 
+// run view with users ip address as location by default
 defaultView();
 
 const toggleSwitch = document.querySelector('.switch');
@@ -22,4 +23,9 @@ const dialog = document.querySelector('dialog');
 const dialogBtn = document.querySelector('.open-dialog');
 dialogBtn.addEventListener('click', (e) => {
     dialog.showModal();
+});
+
+const exitBtn = document.querySelector('.exit-btn');
+exitBtn.addEventListener('click', (e) => {
+    dialog.close();
 });
