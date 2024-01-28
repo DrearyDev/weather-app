@@ -5,11 +5,17 @@
 // https://api.weatherapi.com/v1/history.json?key=04751a96d37d46faac2201108242001&q=auto:ip&dt=2023-08-10
 import './style.css';
 import { currentDate, pastDates, futureDates } from './handleDates.js';
-import { defaultView } from './handleDOM.js';
+import { defaultView, changeDegrees } from './handleDOM.js';
 
 defaultView();
 
+const toggleSwitch = document.querySelector('.switch');
+toggleSwitch.addEventListener('click', (e) => {
+    changeDegrees();
 
+    e.preventDefault();
+    return false;
+});
 
 
 const dialog = document.querySelector('dialog');

@@ -83,10 +83,8 @@ body {
     box-shadow: 0 0 1px white;
     border-radius: 10px;
 }
-.header .buttons-container .switch .slider::before {
+.header .buttons-container .switch .slider .label {
     position: absolute;
-    /* change content depending on if degrees in celsius of farenheit */
-    content: "";
     font-size: .8rem;
 
     display: flex;
@@ -105,7 +103,7 @@ body {
 .header .buttons-container .switch input:checked + .slider {
     background-color: var(--FG-COLOR);
 }
-.header .buttons-container .switch input:checked + .slider::before {
+.header .buttons-container .switch input:checked + .slider .label {
     transform: translateX(26px);
 }
 
@@ -125,17 +123,23 @@ body {
     height: auto;
     width: 64px;
 }
-.container .top {
+.container .main-container {
     padding: 20px;
 
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    gap: 20px;
+    gap: 50px;
 
-    /* border: 1px solid var(--FG-COLOR); */
     border-radius: 10px;
+}
+.container .main-container > .temp-data {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 10px;
 }
 .card-container {
     flex-wrap: wrap;
@@ -153,7 +157,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    gap: 50px;
+    gap: 25px;
 
     border: 1px solid var(--FG-COLOR);
     border-radius: 10px;
@@ -179,6 +183,7 @@ body {
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-between;
+    gap: 10px;
 }
 
 
