@@ -1,4 +1,5 @@
 import { fetchData } from "./fetchData";
+import loadingGif from './Loading.gif';
 
 /*----------------------------------------------------------------------------------------------
 default view will use the ip address as location and get the weather for the
@@ -8,6 +9,8 @@ two past days along with the current day and two future days.
 const container = document.querySelector('.container');
 const mainContainer = document.querySelector('.container > .main-container');
 const cardContainer = document.querySelector('.container > .card-container');
+
+const loading = document.querySelector('.loading');
 
 const degreeLabel = document.querySelector('.switch .slider > .label');
 const degreeInput = document.querySelector('.switch > input');
@@ -82,9 +85,14 @@ function getMonth(num) {
 
 async function renderWeather(query) {
     mainContainer.innerHTML = '';
+    mainContainer.style.border = 'none';
     cardContainer.innerHTML = '';
 
-    data = await Promise.resolve(fetchData(query));
+    loading.src = loadingGif;
+
+    data = await fetchData(query);
+
+    loading.src = '';
 
     for (let i in data) {
         if (Number(i) !== 2) {

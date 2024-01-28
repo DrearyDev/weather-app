@@ -22,7 +22,7 @@ module.exports = {
                 use: ['style-loader', 'css-loader']
             },
             {
-                test: /\.svg$/i,
+                test: /\.(png|svg|gif)$/i,
                 type: 'asset/resource'
             }
         ]
